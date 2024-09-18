@@ -14,22 +14,22 @@ struct MainTabView: View {
                 .tabItem {
                     Image(systemName: "house")
                 }
-            
+
             Text("Search")
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-            
+
             Text("Upload Post")
                 .tabItem {
                     Image(systemName: "plus.square.fill")
                 }
-            
+
             Text("Notifications")
                 .tabItem {
                     Image(systemName: "heart")
                 }
-            
+
             Text("Profile")
                 .tabItem {
                     Image(systemName: "person")
