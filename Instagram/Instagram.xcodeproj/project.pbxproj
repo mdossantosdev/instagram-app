@@ -11,6 +11,7 @@
 		499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C6E4B2C9A361F0029C825 /* ContentView.swift */; };
 		499C6E4E2C9A36200029C825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E4D2C9A36200029C825 /* Assets.xcassets */; };
 		499C6E512C9A36200029C825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E502C9A36200029C825 /* Preview Assets.xcassets */; };
+		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		499C6E4B2C9A361F0029C825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		499C6E4D2C9A36200029C825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499C6E502C9A36200029C825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				499C6E5C2C9A3E590029C825 /* Root */,
+				49F624F72C9B6B0E0028426F /* TabBar */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -113,6 +116,14 @@
 				499C6E4B2C9A361F0029C825 /* ContentView.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		49F624F72C9B6B0E0028426F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				49F624F82C9B6B5B0028426F /* MainTabView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 			files = (
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
 				499C6E4A2C9A361F0029C825 /* InstagramApp.swift in Sources */,
+				49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
