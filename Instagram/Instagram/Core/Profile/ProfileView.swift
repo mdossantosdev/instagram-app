@@ -13,7 +13,16 @@ struct ProfileView: View {
             VStack {
                 HStack {}
 
-                VStack {}
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("John Doe")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+
+                    Text("New York")
+                        .font(.subheadline)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
 
                 Button {
 
