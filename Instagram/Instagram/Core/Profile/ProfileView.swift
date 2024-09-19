@@ -27,7 +27,43 @@ struct ProfileView: View {
                                     .stroke(.black, lineWidth: 1)
                             )
                     }
+                    
+                    Spacer()
+                    
+                    HStack(spacing: 8) {
+                        VStack {
+                            Text("3")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            
+                            Text("Posts")
+                                .font(.footnote)
+                        }
+                        .frame(width: 76)
+                        
+                        VStack {
+                            Text("3")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            
+                            Text("Followers")
+                                .font(.footnote)
+                        }
+                        .frame(width: 76)
+                        
+                        VStack {
+                            Text("3")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            
+                            Text("Following")
+                                .font(.footnote)
+                        
+                        }
+                        .frame(width: 76)
+                    }
                 }
+                .padding(.horizontal)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("John Doe")
