@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack {
-            VStack {
+            VStack(spacing: 10) {
                 HStack {
                     AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=12")) { image in
                         image
@@ -27,40 +27,15 @@ struct ProfileView: View {
                                     .stroke(.black, lineWidth: 1)
                             )
                     }
-                    
+
                     Spacer()
-                    
+
                     HStack(spacing: 8) {
-                        VStack {
-                            Text("3")
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                            
-                            Text("Posts")
-                                .font(.footnote)
-                        }
-                        .frame(width: 76)
-                        
-                        VStack {
-                            Text("3")
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                            
-                            Text("Followers")
-                                .font(.footnote)
-                        }
-                        .frame(width: 76)
-                        
-                        VStack {
-                            Text("3")
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                            
-                            Text("Following")
-                                .font(.footnote)
-                        
-                        }
-                        .frame(width: 76)
+                        UserStatView(value: 3, title: "Posts")
+
+                        UserStatView(value: 26, title: "Followers")
+
+                        UserStatView(value: 34, title: "Following")
                     }
                 }
                 .padding(.horizontal)
