@@ -11,7 +11,23 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             VStack {
-                HStack {}
+                HStack {
+                    AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=12")) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 36))
+                            .frame(width: 80, height: 80)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(.black, lineWidth: 1)
+                            )
+                    }
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("John Doe")
