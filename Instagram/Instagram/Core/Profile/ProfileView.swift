@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ProfileView: View {
+
+    private let gridItems: [GridItem] = [
+        .init(.flexible(), spacing: 1),
+        .init(.flexible(), spacing: 1),
+        .init(.flexible(), spacing: 1)
+    ]
+
     var body: some View {
-        VStack {
+        ScrollView {
             VStack(spacing: 10) {
                 HStack {
                     AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=12")) { image in
@@ -66,6 +73,20 @@ struct ProfileView: View {
                 }
 
                 Divider()
+            }
+
+            LazyVGrid(columns: gridItems, spacing: 2) {
+                ForEach(0 ... 15, id: \.self) { _ in
+                    AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=10")) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } placeholder: {
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 36))
+                            .frame(width: 80, height: 80)
+                    }
+                }
             }
         }
     }
