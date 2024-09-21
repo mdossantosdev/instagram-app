@@ -65,7 +65,8 @@ struct LoginView: View {
                 Spacer()
 
                 NavigationLink {
-                    EmptyView()
+                    AddEmailView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     Text("Don't have an account? **Sign Up**")
                         .font(.footnote)

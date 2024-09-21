@@ -16,6 +16,7 @@
 		49E922042C9F1998001D449E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922032C9F1998001D449E /* FeedView.swift */; };
 		49E922072C9F37FB001D449E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922062C9F37FB001D449E /* SearchView.swift */; };
 		49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922092C9F3EAF001D449E /* LoginView.swift */; };
+		49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9220B2C9F538B001D449E /* AddEmailView.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		49E922032C9F1998001D449E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		49E922062C9F37FB001D449E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		49E922092C9F3EAF001D449E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49E9220B2C9F538B001D449E /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 		49E922082C9F3E85001D449E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				49E9220B2C9F538B001D449E /* AddEmailView.swift */,
 				49E922092C9F3EAF001D449E /* LoginView.swift */,
 			);
 			path = Authentication;
@@ -282,6 +285,7 @@
 				49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */,
 				49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */,
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
+				49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */,
 				49E922072C9F37FB001D449E /* SearchView.swift in Sources */,
 				499C6E4A2C9A361F0029C825 /* InstagramApp.swift in Sources */,
 				49600CB52C9C414A00FA5533 /* UserStatView.swift in Sources */,
