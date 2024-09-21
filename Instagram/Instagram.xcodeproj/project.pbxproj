@@ -19,6 +19,7 @@
 		49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9220B2C9F538B001D449E /* AddEmailView.swift */; };
 		49E9220E2C9F606D001D449E /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9220D2C9F606D001D449E /* IGTextFieldModifier.swift */; };
 		49E922102C9F6402001D449E /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9220F2C9F6402001D449E /* CreateUsernameView.swift */; };
+		49E922122C9F7012001D449E /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922112C9F7012001D449E /* CreatePasswordView.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		49E9220B2C9F538B001D449E /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		49E9220D2C9F606D001D449E /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
 		49E9220F2C9F6402001D449E /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
+		49E922112C9F7012001D449E /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				49E9220B2C9F538B001D449E /* AddEmailView.swift */,
+				49E922112C9F7012001D449E /* CreatePasswordView.swift */,
 				49E9220F2C9F6402001D449E /* CreateUsernameView.swift */,
 				49E922092C9F3EAF001D449E /* LoginView.swift */,
 			);
@@ -298,6 +301,7 @@
 				499C6E4A2C9A361F0029C825 /* InstagramApp.swift in Sources */,
 				49600CB52C9C414A00FA5533 /* UserStatView.swift in Sources */,
 				49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */,
+				49E922122C9F7012001D449E /* CreatePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
