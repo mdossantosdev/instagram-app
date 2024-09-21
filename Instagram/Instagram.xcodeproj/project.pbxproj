@@ -15,6 +15,7 @@
 		49E922022C9ED0D6001D449E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922012C9ED0D6001D449E /* FeedCell.swift */; };
 		49E922042C9F1998001D449E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922032C9F1998001D449E /* FeedView.swift */; };
 		49E922072C9F37FB001D449E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922062C9F37FB001D449E /* SearchView.swift */; };
+		49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922092C9F3EAF001D449E /* LoginView.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		49E922012C9ED0D6001D449E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		49E922032C9F1998001D449E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		49E922062C9F37FB001D449E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		49E922092C9F3EAF001D449E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 		499C6E582C9A3DD30029C825 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				49E922082C9F3E85001D449E /* Authentication */,
 				49600CB32C9C410E00FA5533 /* Components */,
 				49E921FE2C9ED05B001D449E /* Feed */,
 				49F624FA2C9B6ED70028426F /* Profile */,
@@ -155,6 +158,14 @@
 				49E922062C9F37FB001D449E /* SearchView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		49E922082C9F3E85001D449E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				49E922092C9F3EAF001D449E /* LoginView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		49F624F72C9B6B0E0028426F /* TabBar */ = {
@@ -269,6 +280,7 @@
 				49E922042C9F1998001D449E /* FeedView.swift in Sources */,
 				49E922022C9ED0D6001D449E /* FeedCell.swift in Sources */,
 				49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */,
+				49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */,
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
 				49E922072C9F37FB001D449E /* SearchView.swift in Sources */,
 				499C6E4A2C9A361F0029C825 /* InstagramApp.swift in Sources */,
