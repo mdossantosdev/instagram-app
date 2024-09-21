@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchText = ""
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -19,20 +21,22 @@ struct SearchView: View {
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
-                            
+
                             VStack(alignment: .leading) {
                                 Text("johndoe")
                                     .fontWeight(.semibold)
-                                
+
                                 Text("John Doe")
                             }
                             .font(.footnote)
-                            
+
                             Spacer()
                         }
                         .padding(.horizontal)
                     }
                 }
+                .padding(.top, 8)
+                .searchable(text: $searchText, prompt: "Search...")
             }
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
