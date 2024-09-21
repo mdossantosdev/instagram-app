@@ -58,14 +58,14 @@ struct FeedCell: View {
             .padding(.leading, 8)
             .padding(.top, 4)
             .foregroundStyle(.black)
-            
+
             Text("23 likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
                 .padding(.top, 2)
-            
+
             HStack {
                 Text("John Doe ")
                     .fontWeight(.semibold) +
@@ -75,7 +75,7 @@ struct FeedCell: View {
             .font(.footnote)
             .padding(.leading, 10)
             .padding(.top, 1)
-            
+
             Text("6 hours ago")
                 .font(.footnote)
                 .foregroundStyle(Color(.systemGray))
