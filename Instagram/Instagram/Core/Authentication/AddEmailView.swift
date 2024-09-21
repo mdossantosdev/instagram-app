@@ -27,6 +27,7 @@ struct AddEmailView: View {
             TextField("Email", text: $email)
                 .textInputAutocapitalization(.never)
                 .modifier(IGTextFieldModifier())
+                .padding(.top)
 
             NavigationLink {
                 CreateUsernameView()
