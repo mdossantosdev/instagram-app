@@ -26,12 +26,7 @@ struct AddEmailView: View {
 
             TextField("Email", text: $email)
                 .textInputAutocapitalization(.never)
-                .font(.subheadline)
-                .padding(12)
-                .background(Color(.systemGray6))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.horizontal, 20)
-                .padding(.top)
+                .modifier(IGTextFieldModifier())
 
             Button {
                 print("Next")

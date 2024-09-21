@@ -19,23 +19,15 @@ struct LoginView: View {
                 Image(.instagramLogoBlack)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 220)
+                    .frame(width: 220, height: 100)
 
                 VStack {
                     TextField("Enter your email", text: $email)
                         .textInputAutocapitalization(.never)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding(.horizontal, 20)
+                        .modifier(IGTextFieldModifier())
 
                     SecureField("Enter your password", text: $password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding(.horizontal, 20)
+                        .modifier(IGTextFieldModifier())
                 }
 
                 Button {
