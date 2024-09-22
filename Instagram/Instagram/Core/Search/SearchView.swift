@@ -14,19 +14,31 @@ struct SearchView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 12) {
-                    ForEach(0...15, id: \.self) { _ in
+                    ForEach(User.MOCK_USERS) { user in
                         HStack {
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
+                            AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } placeholder: {
+                                Image(systemName: "person.fill")
+                                    .font(.system(size: 28))
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(.black, lineWidth: 1)
+                                    )
+                            }
 
                             VStack(alignment: .leading) {
-                                Text("johndoe")
+                                Text(user.username)
                                     .fontWeight(.semibold)
 
-                                Text("John Doe")
+                                Text(user.fullname ?? "")
                             }
                             .font(.footnote)
 
