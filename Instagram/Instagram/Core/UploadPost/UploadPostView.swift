@@ -10,9 +10,9 @@ import PhotosUI
 
 struct UploadPostView: View {
 
+    @Binding var tabIndex: Int
     @State private var caption = ""
     @State private var imagePickerPresented = false
-
     @StateObject var viewModel = UploadPostViewModel()
 
     var body: some View {
@@ -22,6 +22,7 @@ struct UploadPostView: View {
                     caption = ""
                     viewModel.selectedImage = nil
                     viewModel.postImage = nil
+                    tabIndex = 0
                 } label: {
                     Text("Cancel")
                 }
@@ -65,5 +66,5 @@ struct UploadPostView: View {
 }
 
 #Preview {
-    UploadPostView()
+    UploadPostView(tabIndex: .constant(0))
 }
