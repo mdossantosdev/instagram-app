@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
-    private let gridItems: [GridItem] = [
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1)
-    ]
+
+    let user: User
+
+    var posts: [Post] {
+        return Post.MOCK_POSTS.filter({ $0.user?.username == user.username })
+    }
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 10) {
                     HStack {
-                        AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=12")) { image in
+                        AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
                             image
                                 .resizable()
                                 .scaledToFill()
@@ -48,12 +49,17 @@ struct CurrentUserProfileView: View {
                     .padding(.horizontal)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("John Doe")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
+                        if let fullname = user.fullname {
+                            Text(fullname)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                        }
 
-                        Text("New York")
-                            .font(.subheadline)
+                        if let bio = user.bio {
+                            Text(bio)
+                                .font(.subheadline)
+                        }
+
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
@@ -75,19 +81,7 @@ struct CurrentUserProfileView: View {
                     Divider()
                 }
 
-                LazyVGrid(columns: gridItems, spacing: 2) {
-                    ForEach(0 ... 15, id: \.self) { _ in
-                        AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=10")) { image in
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        } placeholder: {
-                            Image(systemName: "person.fill")
-                                .font(.system(size: 36))
-                                .frame(width: 80, height: 80)
-                        }
-                    }
-                }
+                PostGridView(posts: posts)
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
@@ -107,5 +101,5 @@ struct CurrentUserProfileView: View {
 }
 
 #Preview {
-    CurrentUserProfileView()
+    CurrentUserProfileView(user: User.MOCK_USERS[2])
 }
