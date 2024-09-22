@@ -16,13 +16,13 @@ struct CompleteSignUpView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
-            
+
             Text("Press below to complete registration and start using Instagram")
                 .font(.footnote)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
                 .padding(.top, 4)
-            
+
             Button {
                 print("Sign Up")
             } label: {
