@@ -17,80 +17,90 @@ struct ProfileView: View {
         .init(.flexible(), spacing: 1)
     ]
 
+    var posts: [Post] {
+        return Post.MOCK_POSTS.filter({ $0.user?.username == user.username })
+    }
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                HStack {
-                    AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 54))
-                            .scaledToFit()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 40)
-                                    .stroke(.black, lineWidth: 1)
-                            )
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 10) {
+                    HStack {
+                        AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                        } placeholder: {
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 54))
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 40)
+                                        .stroke(.black, lineWidth: 1)
+                                )
+                        }
+
+                        Spacer()
+
+                        HStack(spacing: 8) {
+                            UserStatView(value: 3, title: "Posts")
+
+                            UserStatView(value: 26, title: "Followers")
+
+                            UserStatView(value: 34, title: "Following")
+                        }
                     }
+                    .padding(.horizontal)
 
-                    Spacer()
+                    VStack(alignment: .leading, spacing: 4) {
+                        if let fullname = user.fullname {
+                            Text(fullname)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                        }
 
-                    HStack(spacing: 8) {
-                        UserStatView(value: 3, title: "Posts")
+                        if let bio = user.bio {
+                            Text(bio)
+                                .font(.footnote)
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
 
-                        UserStatView(value: 26, title: "Followers")
+                    Divider()
+                }
 
-                        UserStatView(value: 34, title: "Following")
+                LazyVGrid(columns: gridItems, spacing: 2) {
+                    ForEach(posts) { post in
+                        AsyncImage(url: URL(string: post.imageUrl)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: geometry.size.width / 3 - 1,
+                                       height: geometry.size.width / 3 - 1)
+                                .clipped()
+                        } placeholder: {
+                            Image(systemName: "camera")
+                                .font(.system(size: 36))
+                                .foregroundStyle(Color(.white))
+                                .frame(width: geometry.size.width / 3 - 1,
+                                   height: geometry.size.width / 3 - 1)
+                                .background(Color(.systemGray4))
+                        }
                     }
                 }
-                .padding(.horizontal)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    if let fullname = user.fullname {
-                        Text(fullname)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                    }
-
-                    if let bio = user.bio {
-                        Text(bio)
-                            .font(.footnote)
-                            .multilineTextAlignment(.leading)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-
-                Divider()
             }
-
-            LazyVGrid(columns: gridItems, spacing: 2) {
-                ForEach(0 ... 15, id: \.self) { _ in
-                    AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=10")) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        Image(systemName: "photo.artframe")
-                            .font(.system(size: 36))
-                            .foregroundStyle(Color(.white))
-                            .frame(width: 120, height: 120)
-                            .background(Color(.systemGray4))
-                    }
-                }
-            }
+            .navigationTitle(user.username)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle(user.username)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    ProfileView(user: User.MOCK_USERS[0])
+    ProfileView(user: User.MOCK_USERS[2])
 }

@@ -77,7 +77,7 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundStyle(.black)
 
-            Text("23 likes")
+            Text("\(post.likes)")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -85,9 +85,9 @@ struct FeedCell: View {
                 .padding(.top, 2)
 
             HStack {
-                Text("John Doe ")
+                Text("\(post.user?.username ?? "") ")
                     .fontWeight(.semibold) +
-                Text("This is a test caption for now")
+                Text(post.caption)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.footnote)
