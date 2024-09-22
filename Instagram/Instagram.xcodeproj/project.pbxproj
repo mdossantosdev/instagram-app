@@ -25,6 +25,7 @@
 		49E922182C9FA5CB001D449E /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */; };
 		49E9221A2CA02D16001D449E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922192CA02D16001D449E /* Post.swift */; };
 		49E9221C2CA05E6A001D449E /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9221B2CA05E6A001D449E /* PostGridView.swift */; };
+		49E9221E2CA06535001D449E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9221D2CA06535001D449E /* ProfileHeaderView.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		49E922192CA02D16001D449E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		49E9221B2CA05E6A001D449E /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		49E9221D2CA06535001D449E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,8 +207,9 @@
 		49F624FA2C9B6ED70028426F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				49F624FB2C9B6EF70028426F /* ProfileView.swift */,
 				49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */,
+				49E9221D2CA06535001D449E /* ProfileHeaderView.swift */,
+				49F624FB2C9B6EF70028426F /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */,
 				49E9221C2CA05E6A001D449E /* PostGridView.swift in Sources */,
 				49E922102C9F6402001D449E /* CreateUsernameView.swift in Sources */,
+				49E9221E2CA06535001D449E /* ProfileHeaderView.swift in Sources */,
 				49E922142C9F73FC001D449E /* CompleteSignUpView.swift in Sources */,
 				49E922162C9F7C8C001D449E /* User.swift in Sources */,
 				49E922072C9F37FB001D449E /* SearchView.swift in Sources */,
