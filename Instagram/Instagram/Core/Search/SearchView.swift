@@ -15,41 +15,47 @@ struct SearchView: View {
             ScrollView {
                 LazyVStack(spacing: 12) {
                     ForEach(User.MOCK_USERS) { user in
-                        HStack {
-                            AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                            } placeholder: {
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 28))
-                                    .scaledToFit()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .stroke(.black, lineWidth: 1)
-                                    )
+                        NavigationLink(value: user) {
+                            HStack {
+                                AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                } placeholder: {
+                                    Image(systemName: "person.fill")
+                                        .font(.system(size: 28))
+                                        .scaledToFit()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(.black, lineWidth: 1)
+                                        )
+                                }
+
+                                VStack(alignment: .leading) {
+                                    Text(user.username)
+                                        .fontWeight(.semibold)
+
+                                    Text(user.fullname ?? "")
+                                }
+                                .font(.footnote)
+
+                                Spacer()
                             }
-
-                            VStack(alignment: .leading) {
-                                Text(user.username)
-                                    .fontWeight(.semibold)
-
-                                Text(user.fullname ?? "")
-                            }
-                            .font(.footnote)
-
-                            Spacer()
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .foregroundStyle(.black)
                     }
                 }
                 .padding(.top, 8)
                 .searchable(text: $searchText, prompt: "Search...")
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView()
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }
