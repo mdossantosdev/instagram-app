@@ -8,28 +8,46 @@
 import SwiftUI
 
 struct FeedCell: View {
+    let post: Post
+
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
+                if let user = post.user {
+                    AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    }
 
-                Text("John Doe")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                    Text(user.username)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
 
                 Spacer()
             }
             .padding(.leading, 8)
 
-            Image(systemName: "photo.artframe")
-                .resizable()
-                .scaledToFill()
-                .frame(height: 400)
-                .clipShape(Rectangle())
+            AsyncImage(url: URL(string: post.imageUrl)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 400)
+                    .clipShape(Rectangle())
+            } placeholder: {
+                Image(systemName: "camera")
+                    .font(.system(size: 54))
+                    .frame(height: 400)
+            }
 
             HStack(spacing: 16) {
                 Button {
@@ -87,5 +105,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell()
+    FeedCell(post: Post.MOCK_POSTS[0])
 }
