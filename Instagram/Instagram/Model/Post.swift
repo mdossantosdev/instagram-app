@@ -33,7 +33,7 @@ extension Post {
               likes: 42,
               imageUrl: "https://images.pexels.com/photos/19597723/pexels-photo-19597723/free-photo-of-route-campagne-voiture-vehicule.jpeg",
               timestamp: Date(),
-              user: User.MOCK_USERS[3]),
+              user: User.MOCK_USERS[2]),
         .init(id: UUID().uuidString,
               ownerUid: UUID().uuidString,
               caption: "This is some test caption for now",
@@ -54,6 +54,6 @@ extension Post {
               likes: 473,
               imageUrl: "https://images.pexels.com/photos/4994815/pexels-photo-4994815.jpeg",
               timestamp: Date(),
-              user: User.MOCK_USERS[4])
+              user: User.MOCK_USERS[2])
     ]
 }
