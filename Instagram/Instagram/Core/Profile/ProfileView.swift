@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
 
+    let user: User
+
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
@@ -19,7 +21,7 @@ struct ProfileView: View {
         ScrollView {
             VStack(spacing: 10) {
                 HStack {
-                    AsyncImage(url: URL(string: "https://i.pravatar.cc/300?img=12")) { image in
+                    AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
                         image
                             .resizable()
                             .scaledToFill()
@@ -27,8 +29,10 @@ struct ProfileView: View {
                             .clipShape(Circle())
                     } placeholder: {
                         Image(systemName: "person.fill")
-                            .font(.system(size: 36))
+                            .font(.system(size: 54))
+                            .scaledToFit()
                             .frame(width: 80, height: 80)
+                            .clipShape(Circle())
                             .overlay(
                                 RoundedRectangle(cornerRadius: 40)
                                     .stroke(.black, lineWidth: 1)
@@ -48,29 +52,20 @@ struct ProfileView: View {
                 .padding(.horizontal)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("John Doe")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                    if let fullname = user.fullname {
+                        Text(fullname)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                    }
 
-                    Text("New York")
-                        .font(.subheadline)
+                    if let bio = user.bio {
+                        Text(bio)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
-
-                Button {
-
-                } label: {
-                    Text("Edit Profile")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .frame(width: 360, height: 32)
-                        .foregroundStyle(.black)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                }
 
                 Divider()
             }
@@ -89,22 +84,11 @@ struct ProfileView: View {
                 }
             }
         }
-        .navigationTitle("Profile")
+        .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-
-                } label: {
-                    Image(systemName: "line.3.horizontal")
-                        .foregroundStyle(.black)
-                        .fontWeight(.semibold)
-                }
-            }
-        }
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(user: User.MOCK_USERS[0])
 }
