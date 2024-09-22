@@ -77,9 +77,11 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFill()
                     } placeholder: {
-                        Image(systemName: "person.fill")
+                        Image(systemName: "photo.artframe")
                             .font(.system(size: 36))
-                            .frame(width: 80, height: 80)
+                            .foregroundStyle(Color(.white))
+                            .frame(width: 120, height: 120)
+                            .background(Color(.systemGray4))
                     }
                 }
             }
