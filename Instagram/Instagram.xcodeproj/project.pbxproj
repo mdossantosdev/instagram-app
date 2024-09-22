@@ -22,6 +22,7 @@
 		49E922122C9F7012001D449E /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922112C9F7012001D449E /* CreatePasswordView.swift */; };
 		49E922142C9F73FC001D449E /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922132C9F73FC001D449E /* CompleteSignUpView.swift */; };
 		49E922162C9F7C8C001D449E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922152C9F7C8C001D449E /* User.swift */; };
+		49E922182C9FA5CB001D449E /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		49E922112C9F7012001D449E /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		49E922132C9F73FC001D449E /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
 		49E922152C9F7C8C001D449E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				49F624FB2C9B6EF70028426F /* ProfileView.swift */,
+				49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */,
 				49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */,
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
+				49E922182C9FA5CB001D449E /* CurrentUserProfileView.swift in Sources */,
 				49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */,
 				49E922102C9F6402001D449E /* CreateUsernameView.swift in Sources */,
 				49E922142C9F73FC001D449E /* CompleteSignUpView.swift in Sources */,
