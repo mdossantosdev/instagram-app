@@ -9,10 +9,11 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
+
     @Published var userSession: FirebaseAuth.User?
-    
+
     static let shared = AuthService()
-    
+
     init() {
         self.userSession = Auth.auth().currentUser
     }
