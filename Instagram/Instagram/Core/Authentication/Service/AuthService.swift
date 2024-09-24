@@ -19,8 +19,11 @@ class AuthService {
     }
 
     func createUser(email: String, username: String, password: String) async throws {
-        print("Email: \(email)")
-        print("Username: \(username)")
-        print("Password: \(password)")
+        do {
+            let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            self.userSession = result.user
+        } catch {
+            print("DEBUG: Failed to register user with error \(error.localizedDescription)")
+        }
     }
 }
