@@ -13,7 +13,7 @@ struct CompleteSignUpView: View {
 
     var body: some View {
         VStack {
-            Text("Welcome to Instagram")
+            Text("Welcome to Instagram, \(viewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
