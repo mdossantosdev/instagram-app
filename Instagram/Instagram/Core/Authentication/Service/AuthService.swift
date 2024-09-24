@@ -17,4 +17,10 @@ class AuthService {
     init() {
         self.userSession = Auth.auth().currentUser
     }
+    
+    func createUser(email: String, username: String, password: String) async throws {
+        print("Email: \(email)")
+        print("Username: \(username)")
+        print("Password: \(password)")
+    }
 }
