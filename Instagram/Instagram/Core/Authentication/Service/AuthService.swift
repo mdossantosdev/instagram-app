@@ -9,7 +9,6 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
-
     @Published var userSession: FirebaseAuth.User?
 
     static let shared = AuthService()
@@ -18,6 +17,7 @@ class AuthService {
         self.userSession = Auth.auth().currentUser
     }
 
+    @MainActor
     func createUser(email: String, username: String, password: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -26,7 +26,8 @@ class AuthService {
             print("DEBUG: Failed to register user with error \(error.localizedDescription)")
         }
     }
-    
+
+    @MainActor
     func login(email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
