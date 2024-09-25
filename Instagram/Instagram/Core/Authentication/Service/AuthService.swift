@@ -26,4 +26,9 @@ class AuthService {
             print("DEBUG: Failed to register user with error \(error.localizedDescription)")
         }
     }
+
+    func signout() {
+        try? Auth.auth().signOut()
+        self.userSession = nil
+    }
 }
