@@ -36,6 +36,7 @@
 		49E9222C2CA0C7B8001D449E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 49E9222B2CA0C7B8001D449E /* FirebaseStorage */; };
 		49E922302CA0CDD1001D449E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9222F2CA0CDD1001D449E /* AuthService.swift */; };
 		49EC594D2CA44F11002FC2C5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC594C2CA44F11002FC2C5 /* LoginViewModel.swift */; };
+		49EC594F2CA4ED9F002FC2C5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC594E2CA4ED9F002FC2C5 /* UserService.swift */; };
 		49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624F82C9B6B5B0028426F /* MainTabView.swift */; };
 		49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F624FB2C9B6EF70028426F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		49E922242CA0C69B001D449E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		49E9222F2CA0CDD1001D449E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		49EC594C2CA44F11002FC2C5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		49EC594E2CA4ED9F002FC2C5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		49F624F82C9B6B5B0028426F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		49F624FB2C9B6EF70028426F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 		499C6E5A2C9A3DF50029C825 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				49EC594E2CA4ED9F002FC2C5 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				49F624FC2C9B6EF70028426F /* ProfileView.swift in Sources */,
 				49E9220A2C9F3EAF001D449E /* LoginView.swift in Sources */,
 				49E922302CA0CDD1001D449E /* AuthService.swift in Sources */,
+				49EC594F2CA4ED9F002FC2C5 /* UserService.swift in Sources */,
 				49E9221A2CA02D16001D449E /* Post.swift in Sources */,
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
 				49E922182C9FA5CB001D449E /* CurrentUserProfileView.swift in Sources */,
