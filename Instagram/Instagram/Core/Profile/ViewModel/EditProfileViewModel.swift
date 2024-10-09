@@ -1,23 +1,21 @@
 //
-//  UploadPostViewModel.swift
+//  EditProfileViewModel.swift
 //  Instagram
 //
-//  Created by Marc on 22/09/2024.
+//  Created by Marc on 09/10/2024.
 //
 
-import Foundation
+import Firebase
 import PhotosUI
 import SwiftUI
 
-@MainActor
-class UploadPostViewModel: ObservableObject {
-
+class EditProfileViewModel: ObservableObject {
     @Published var selectedImage: PhotosPickerItem? {
-        didSet { Task {
-            await loadImage(from: selectedImage)
-        }}
+        didSet { Task { await loadImage(from: selectedImage) } }
     }
-    @Published var postImage: Image?
+    @Published var profileImage: Image?
+    @Published var fullname = ""
+    @Published var bio = ""
 
     func loadImage(from item: PhotosPickerItem?) async {
         guard let item = item else { return }
@@ -25,6 +23,6 @@ class UploadPostViewModel: ObservableObject {
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
         guard let uiImage = UIImage(data: data) else { return }
 
-        self.postImage = Image(uiImage: uiImage)
+        self.profileImage = Image(uiImage: uiImage)
     }
 }

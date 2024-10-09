@@ -16,6 +16,7 @@
 		499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C6E4B2C9A361F0029C825 /* ContentView.swift */; };
 		499C6E4E2C9A36200029C825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E4D2C9A36200029C825 /* Assets.xcassets */; };
 		499C6E512C9A36200029C825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E502C9A36200029C825 /* Preview Assets.xcassets */; };
+		49B2B6B82CB724EE00B17ADE /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2B6B72CB724EE00B17ADE /* EditProfileViewModel.swift */; };
 		49E922022C9ED0D6001D449E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922012C9ED0D6001D449E /* FeedCell.swift */; };
 		49E922042C9F1998001D449E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922032C9F1998001D449E /* FeedView.swift */; };
 		49E922072C9F37FB001D449E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922062C9F37FB001D449E /* SearchView.swift */; };
@@ -54,6 +55,7 @@
 		499C6E4B2C9A361F0029C825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		499C6E4D2C9A36200029C825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499C6E502C9A36200029C825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49B2B6B72CB724EE00B17ADE /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		49E922012C9ED0D6001D449E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		49E922032C9F1998001D449E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		49E922062C9F37FB001D449E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,41 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		49B2B6B32CB7206600B17ADE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */,
+				49053AEC2CB5D22600AE7379 /* EditProfileView.swift */,
+				49E9221D2CA06535001D449E /* ProfileHeaderView.swift */,
+				49F624FB2C9B6EF70028426F /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49B2B6B42CB7206E00B17ADE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49B2B6B72CB724EE00B17ADE /* EditProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49B2B6B92CB7269B00B17ADE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E922202CA06B79001D449E /* UploadPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49B2B6BA2CB726A800B17ADE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49E922222CA076F3001D449E /* UploadPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		49E921FE2C9ED05B001D449E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,8 +306,8 @@
 		49E9221F2CA06B48001D449E /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
-				49E922202CA06B79001D449E /* UploadPostView.swift */,
-				49E922222CA076F3001D449E /* UploadPostViewModel.swift */,
+				49B2B6B92CB7269B00B17ADE /* View */,
+				49B2B6BA2CB726A800B17ADE /* ViewModel */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -306,10 +343,8 @@
 		49F624FA2C9B6ED70028426F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				49E922172C9FA5CB001D449E /* CurrentUserProfileView.swift */,
-				49053AEC2CB5D22600AE7379 /* EditProfileView.swift */,
-				49E9221D2CA06535001D449E /* ProfileHeaderView.swift */,
-				49F624FB2C9B6EF70028426F /* ProfileView.swift */,
+				49B2B6B32CB7206600B17ADE /* View */,
+				49B2B6B42CB7206E00B17ADE /* ViewModel */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -427,6 +462,7 @@
 				499C6E4C2C9A361F0029C825 /* ContentView.swift in Sources */,
 				49E922182C9FA5CB001D449E /* CurrentUserProfileView.swift in Sources */,
 				49E9220C2C9F538B001D449E /* AddEmailView.swift in Sources */,
+				49B2B6B82CB724EE00B17ADE /* EditProfileViewModel.swift in Sources */,
 				49E9221C2CA05E6A001D449E /* PostGridView.swift in Sources */,
 				49E922102C9F6402001D449E /* CreateUsernameView.swift in Sources */,
 				49077A042CA1854B00816179 /* ContentViewModel.swift in Sources */,
