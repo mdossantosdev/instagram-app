@@ -10,9 +10,7 @@ import PhotosUI
 
 struct EditProfileView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var selectedImage: PhotosPickerItem?
-    @State private var fullname = ""
-    @State private var bio = ""
+    @StateObject var viewModel = EditProfileViewModel()
 
     var body: some View {
         VStack {
@@ -43,15 +41,24 @@ struct EditProfileView: View {
 
             Divider()
 
-            PhotosPicker(selection: $selectedImage) {
+            PhotosPicker(selection: $viewModel.selectedImage) {
                 VStack {
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .padding()
-                        .frame(width: 80, height: 80)
-                        .foregroundStyle(Color.white)
-                        .background(Color.gray)
-                        .clipShape(Circle())
+                    if let image = viewModel.profileImage {
+                        image
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .foregroundStyle(Color.white)
+                            .background(Color.gray)
+                            .clipShape(Circle())
+                    } else {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .padding()
+                            .frame(width: 80, height: 80)
+                            .foregroundStyle(Color.white)
+                            .background(Color.gray)
+                            .clipShape(Circle())
+                    }
 
                     Text("Edit profile picture")
                         .font(.footnote)
@@ -65,13 +72,13 @@ struct EditProfileView: View {
             VStack {
                 EditProfileRowView(title: "Name",
                                    placeholder: "Enter your name",
-                                   text: $fullname)
+                                   text: $viewModel.fullname)
 
                 EditProfileRowView(title: "Bio",
                                    placeholder: "Enter your bio",
-                                   text: $bio)
+                                   text: $viewModel.bio)
             }
-            
+
             Spacer()
         }
     }
