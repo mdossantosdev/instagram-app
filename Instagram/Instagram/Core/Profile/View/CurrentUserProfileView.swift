@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
-
     let user: User
 
     var posts: [Post] {
