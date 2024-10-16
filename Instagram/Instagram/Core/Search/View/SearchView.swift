@@ -18,23 +18,7 @@ struct SearchView: View {
                     ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Circle())
-                                } placeholder: {
-                                    Image(systemName: "person.fill")
-                                        .font(.system(size: 28))
-                                        .scaledToFit()
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Circle())
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .stroke(.black, lineWidth: 1)
-                                        )
-                                }
+                                CircularProfileImageView(user: user, size: .xSmall)
 
                                 VStack(alignment: .leading) {
                                     Text(user.username)
@@ -47,8 +31,8 @@ struct SearchView: View {
                                 Spacer()
                             }
                             .padding(.horizontal)
+                            .foregroundStyle(.black)
                         }
-                        .foregroundStyle(.black)
                     }
                 }
                 .padding(.top, 8)

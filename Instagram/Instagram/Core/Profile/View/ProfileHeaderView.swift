@@ -15,7 +15,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack {
-                CircularProfileImageView(user: user)
+                CircularProfileImageView(user: user, size: .large)
 
                 Spacer()
 

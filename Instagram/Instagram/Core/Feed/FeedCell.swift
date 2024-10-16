@@ -14,19 +14,7 @@ struct FeedCell: View {
         VStack {
             HStack {
                 if let user = post.user {
-                    AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                    }
+                    CircularProfileImageView(user: user, size: .xSmall)
 
                     Text(user.username)
                         .font(.footnote)
