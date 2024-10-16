@@ -15,20 +15,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack {
-                AsyncImage(url: URL(string: user.profileImageUrl ?? "")) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                } placeholder: {
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 40))
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .background(Color(.systemGray6))
-                        .clipShape(Circle())
-                }
+                CircularProfileImageView(user: user)
 
                 Spacer()
 
