@@ -18,6 +18,7 @@
 		499C6E4E2C9A36200029C825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E4D2C9A36200029C825 /* Assets.xcassets */; };
 		499C6E512C9A36200029C825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499C6E502C9A36200029C825 /* Preview Assets.xcassets */; };
 		49A02EC62CBF187F007D626E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 49A02EC52CBF187F007D626E /* Kingfisher */; };
+		49A02EC82CBF2040007D626E /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A02EC72CBF2040007D626E /* CircularProfileImageView.swift */; };
 		49B2B6B82CB724EE00B17ADE /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2B6B72CB724EE00B17ADE /* EditProfileViewModel.swift */; };
 		49E922022C9ED0D6001D449E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922012C9ED0D6001D449E /* FeedCell.swift */; };
 		49E922042C9F1998001D449E /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E922032C9F1998001D449E /* FeedView.swift */; };
@@ -58,6 +59,7 @@
 		499C6E4B2C9A361F0029C825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		499C6E4D2C9A36200029C825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499C6E502C9A36200029C825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49A02EC72CBF2040007D626E /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		49B2B6B72CB724EE00B17ADE /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		49E922012C9ED0D6001D449E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		49E922032C9F1998001D449E /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				49E9220D2C9F606D001D449E /* IGTextFieldModifier.swift */,
 				49E9221B2CA05E6A001D449E /* PostGridView.swift */,
 				49600CB42C9C414A00FA5533 /* UserStatView.swift */,
+				49A02EC72CBF2040007D626E /* CircularProfileImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				49E9220E2C9F606D001D449E /* IGTextFieldModifier.swift in Sources */,
 				499C6E4A2C9A361F0029C825 /* InstagramApp.swift in Sources */,
 				49600CB52C9C414A00FA5533 /* UserStatView.swift in Sources */,
+				49A02EC82CBF2040007D626E /* CircularProfileImageView.swift in Sources */,
 				4958B3F72CADF1BF00398819 /* SearchViewModel.swift in Sources */,
 				49F624F92C9B6B5B0028426F /* MainTabView.swift in Sources */,
 				49E922122C9F7012001D449E /* CreatePasswordView.swift in Sources */,
