@@ -65,7 +65,7 @@ struct FeedCell: View {
             .padding(.top, 4)
             .foregroundStyle(.black)
 
-            Text("\(post.likes)")
+            Text("\(post.likes) likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
