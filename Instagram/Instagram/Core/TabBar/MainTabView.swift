@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum Tab: String {
-    case feed = "house"
-    case search = "magnifyingglass"
-    case upload = "plus.square.fill"
-    case favorite = "heart"
-    case profile = "person"
-}
-
 struct MainTabView: View {
     let user: User
     @State private var selectedTab: Tab = .feed
