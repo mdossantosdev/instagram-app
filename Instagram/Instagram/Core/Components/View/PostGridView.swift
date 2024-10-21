@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct PostGridView: View {
+    @StateObject var viewModel: PostGridViewModel
 
-    let posts: [Post]
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: PostGridViewModel(user: user))
+    }
 
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
@@ -20,7 +23,7 @@ struct PostGridView: View {
     var body: some View {
         GeometryReader { geometry in
             LazyVGrid(columns: gridItems, spacing: 2) {
-                ForEach(posts) { post in
+                ForEach(viewModel.posts) { post in
                     AsyncImage(url: URL(string: post.imageUrl)) { image in
                         image
                             .resizable()
@@ -43,5 +46,5 @@ struct PostGridView: View {
 }
 
 #Preview {
-    PostGridView(posts: Post.MOCK_POSTS)
+    PostGridView(user: User.MOCK_USERS[0])
 }
