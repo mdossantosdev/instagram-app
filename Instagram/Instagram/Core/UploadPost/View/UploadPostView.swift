@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct UploadPostView: View {
-    @Binding var tabIndex: Int
+    @Binding var tab: Tab
     @State private var caption = ""
     @State private var imagePickerPresented = false
     @StateObject var viewModel = UploadPostViewModel()
@@ -67,10 +67,10 @@ struct UploadPostView: View {
         caption = ""
         viewModel.selectedImage = nil
         viewModel.postImage = nil
-        tabIndex = 0
+        tab = .feed
     }
 }
 
 #Preview {
-    UploadPostView(tabIndex: .constant(0))
+    UploadPostView(tab: .constant(.feed))
 }

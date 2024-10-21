@@ -7,51 +7,44 @@
 
 import SwiftUI
 
+enum Tab: String {
+    case feed = "house"
+    case search = "magnifyingglass"
+    case upload = "plus.square.fill"
+    case favorite = "heart"
+    case profile = "person"
+}
+
 struct MainTabView: View {
     let user: User
-    @State private var selectedIndex = 0
+    @State private var selectedTab: Tab = .feed
 
     var body: some View {
-        TabView(selection: $selectedIndex) {
+        TabView(selection: $selectedTab) {
             FeedView()
-                .onAppear {
-                    selectedIndex = 0
-                }
                 .tabItem {
-                    Image(systemName: "house")
-                }.tag(0)
+                    Image(systemName: Tab.feed.rawValue)
+                }.tag(Tab.feed)
 
             SearchView()
-                .onAppear {
-                    selectedIndex = 1
-                }
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }.tag(1)
+                    Image(systemName: Tab.search.rawValue)
+                }.tag(Tab.search)
 
-            UploadPostView(tabIndex: $selectedIndex)
-                .onAppear {
-                    selectedIndex = 2
-                }
+            UploadPostView(tab: $selectedTab)
                 .tabItem {
-                    Image(systemName: "plus.square.fill")
-                }.tag(2)
+                    Image(systemName: Tab.upload.rawValue)
+                }.tag(Tab.upload)
 
-            Text("Notifications")
-                .onAppear {
-                    selectedIndex = 3
-                }
+            Text("Favorite")
                 .tabItem {
-                    Image(systemName: "heart")
-                }.tag(3)
+                    Image(systemName: Tab.favorite.rawValue)
+                }.tag(Tab.favorite)
 
             CurrentUserProfileView(user: user)
-                .onAppear {
-                    selectedIndex = 4
-                }
                 .tabItem {
-                    Image(systemName: "person")
-                }.tag(4)
+                    Image(systemName: Tab.profile.rawValue)
+                }.tag(Tab.profile)
         }
         .tint(.black)
     }
