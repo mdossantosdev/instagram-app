@@ -26,6 +26,7 @@ struct CreateUsernameView: View {
 
             TextField("Username", text: $viewModel.username)
                 .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
                 .modifier(IGTextFieldModifier())
                 .padding(.top)
 

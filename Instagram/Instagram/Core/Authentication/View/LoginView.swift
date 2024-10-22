@@ -23,10 +23,11 @@ struct LoginView: View {
                 VStack {
                     TextField("Enter your email", text: $viewModel.email)
                         .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.emailAddress)
                         .modifier(IGTextFieldModifier())
 
-                    SecureField("Enter your password", text: $viewModel.password)
-                        .modifier(IGTextFieldModifier())
+                    SecureTextFieldView(text: $viewModel.password, placeholder: "Enter your password")
                 }
 
                 Button {
