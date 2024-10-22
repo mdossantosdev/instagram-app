@@ -24,9 +24,7 @@ struct CreatePasswordView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
 
-            SecureField("Password", text: $viewModel.password)
-                .textInputAutocapitalization(.never)
-                .modifier(IGTextFieldModifier())
+            SecureTextFieldView(text: $viewModel.password, placeholder: "Password")
                 .padding(.top)
 
             NavigationLink {

@@ -26,6 +26,8 @@ struct AddEmailView: View {
 
             TextField("Email", text: $viemodel.email)
                 .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
+                .keyboardType(.emailAddress)
                 .modifier(IGTextFieldModifier())
                 .padding(.top)
 
