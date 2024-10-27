@@ -147,15 +147,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		493B7E492CA326800086E9D1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				493B7E4A2CA326DE0086E9D1 /* RegistrationViewModel.swift */,
-				49EC594C2CA44F11002FC2C5 /* LoginViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		4958B3F42CADF17900398819 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +336,8 @@
 		49E922082C9F3E85001D449E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				49E9222D2CA0CD74001D449E /* View */,
-				493B7E492CA326800086E9D1 /* ViewModel */,
+				49FD9D702CCEE0F300ECB1C2 /* Login */,
+				49FD9D6D2CCEE08600ECB1C2 /* Registration */,
 				49E9222E2CA0CDB7001D449E /* Service */,
 			);
 			path = Authentication;
@@ -359,18 +350,6 @@
 				49B2B6BA2CB726A800B17ADE /* ViewModel */,
 			);
 			path = UploadPost;
-			sourceTree = "<group>";
-		};
-		49E9222D2CA0CD74001D449E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				49E9220B2C9F538B001D449E /* AddEmailView.swift */,
-				49E922132C9F73FC001D449E /* CompleteSignUpView.swift */,
-				49E922112C9F7012001D449E /* CreatePasswordView.swift */,
-				49E9220F2C9F6402001D449E /* CreateUsernameView.swift */,
-				49E922092C9F3EAF001D449E /* LoginView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		49E9222E2CA0CDB7001D449E /* Service */ = {
@@ -470,6 +449,59 @@
 			isa = PBXGroup;
 			children = (
 				49FD9D6B2CCE9F8700ECB1C2 /* CurrentUserProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49FD9D6D2CCEE08600ECB1C2 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				49FD9D6E2CCEE09100ECB1C2 /* View */,
+				49FD9D6F2CCEE09600ECB1C2 /* ViewModel */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		49FD9D6E2CCEE09100ECB1C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E9220B2C9F538B001D449E /* AddEmailView.swift */,
+				49E922132C9F73FC001D449E /* CompleteSignUpView.swift */,
+				49E922112C9F7012001D449E /* CreatePasswordView.swift */,
+				49E9220F2C9F6402001D449E /* CreateUsernameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49FD9D6F2CCEE09600ECB1C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				493B7E4A2CA326DE0086E9D1 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49FD9D702CCEE0F300ECB1C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49FD9D712CCEE10200ECB1C2 /* View */,
+				49FD9D722CCEE11500ECB1C2 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		49FD9D712CCEE10200ECB1C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49E922092C9F3EAF001D449E /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49FD9D722CCEE11500ECB1C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49EC594C2CA44F11002FC2C5 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
