@@ -10,15 +10,13 @@ import SwiftUI
 struct CurrentUserProfileView: View {
     @StateObject var viewModel: CurrentUserProfileViewModel = .init()
 
-    private var currentUser: User? {
-        return viewModel.currentUser
-    }
-
     var body: some View {
         NavigationStack {
             ScrollView {
-                ProfileHeaderView(user: currentUser!)
-                PostGridView(user: currentUser!)
+                if let currentUser = viewModel.currentUser {
+                    ProfileHeaderView(user: currentUser)
+                    PostGridView(user: currentUser)
+                }
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)

@@ -16,8 +16,8 @@ struct ContentView: View {
         Group {
             if isSplashPresented {
                 SplashView(isPresented: $isSplashPresented)
-            } else if let currentUser = viewModel.currentUser {
-                MainTabView(user: currentUser)
+            } else if viewModel.userSession != nil {
+                MainTabView()
             } else {
                 LoginView()
                     .environmentObject(registrationViewModel)
