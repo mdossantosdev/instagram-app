@@ -33,7 +33,7 @@ struct MainTabView: View {
                     Image(systemName: Tab.favorite.rawValue)
                 }.tag(Tab.favorite)
 
-            CurrentUserProfileView(user: user)
+            CurrentUserProfileView()
                 .tabItem {
                     Image(systemName: Tab.profile.rawValue)
                 }.tag(Tab.profile)

@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
-    let user: User
+    @StateObject var viewModel: CurrentUserProfileViewModel = .init()
+
+    private var currentUser: User? {
+        return viewModel.currentUser
+    }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                ProfileHeaderView(user: user)
-
-                PostGridView(user: user)
+                ProfileHeaderView(user: currentUser!)
+                PostGridView(user: currentUser!)
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
@@ -35,5 +38,5 @@ struct CurrentUserProfileView: View {
 }
 
 #Preview {
-    CurrentUserProfileView(user: User.MOCK_USERS[2])
+    CurrentUserProfileView()
 }
