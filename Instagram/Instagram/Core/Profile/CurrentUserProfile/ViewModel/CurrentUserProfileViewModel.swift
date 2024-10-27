@@ -16,6 +16,10 @@ class CurrentUserProfileViewModel: ObservableObject {
         setupSubscribers()
     }
 
+    func fetchCurrentUser() async throws {
+        try await UserService.shared.fetchCurrentUser()
+    }
+
     private func setupSubscribers() {
         UserService.shared.$currentUser.sink { [weak self] user in
             self?.currentUser = user
