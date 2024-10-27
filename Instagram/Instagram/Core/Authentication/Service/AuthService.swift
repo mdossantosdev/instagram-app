@@ -5,7 +5,6 @@
 //  Created by Marc on 23/09/2024.
 //
 
-import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
@@ -16,7 +15,7 @@ class AuthService {
     static let shared = AuthService()
 
     init() {
-        Task { try await loadUserData() }
+        self.userSession = Auth.auth().currentUser
     }
 
     @MainActor
@@ -24,7 +23,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            await uploadUserData(uid: result.user.uid, username: username, email: email)
+            try await uploadUserData(id: result.user.uid, username: username, email: email)
         } catch {
             print("DEBUG: Failed to register user with error \(error.localizedDescription)")
         }
@@ -35,17 +34,10 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            try await loadUserData()
+            try await UserService.shared.fetchCurrentUser()
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
         }
-    }
-
-    @MainActor
-    func loadUserData() async throws {
-        self.userSession = Auth.auth().currentUser
-        guard let currentUid = userSession?.uid else { return }
-        self.currentUser = try await UserService.shared.fetchUser(withUid: currentUid)
     }
 
     func signout() {
@@ -54,10 +46,10 @@ class AuthService {
         self.currentUser = nil
     }
 
-    private func uploadUserData(uid: String, username: String, email: String) async {
-        let user = User(id: uid, username: username, email: email)
-        self.currentUser = user
+    private func uploadUserData(id: String, username: String, email: String) async throws {
+        let user = User(id: id, username: username, email: email)
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
-        try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+        try await Firestore.firestore().collection("users").document(id).setData(encodedUser)
+        UserService.shared.currentUser = user
     }
 }
