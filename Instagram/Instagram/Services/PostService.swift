@@ -17,7 +17,7 @@ class PostService {
         for index in 0 ..< posts.count {
             let post = posts[index]
             let ownerUid = post.ownerUid
-            let postUser = try await UserService.fetchUser(withUid: ownerUid)
+            let postUser = try await UserService.shared.fetchUser(withUid: ownerUid)
             posts[index].user = postUser
         }
         return posts
