@@ -39,7 +39,7 @@ struct SearchView: View {
                 .searchable(text: $searchText, prompt: "Search...")
             }
             .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
+                UserProfileView(user: user)
             })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)

@@ -1,13 +1,13 @@
 //
-//  ProfileView.swift
+//  UserProfileView.swift
 //  Instagram
 //
-//  Created by Marc on 18/09/2024.
+//  Created by Marc on 27/10/2024.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct UserProfileView: View {
     let user: User
 
     var body: some View {
@@ -22,5 +22,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(user: User.MOCK_USERS[2])
+    UserProfileView(user: User.MOCK_USERS[2])
 }
