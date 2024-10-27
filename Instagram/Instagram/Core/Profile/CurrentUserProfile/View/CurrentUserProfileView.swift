@@ -31,6 +31,9 @@ struct CurrentUserProfileView: View {
                     }
                 }
             }
+            .refreshable {
+                Task { try await viewModel.fetchCurrentUser() }
+            }
         }
     }
 }
