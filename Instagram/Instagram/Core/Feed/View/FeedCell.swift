@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct FeedCell: View {
     let post: Post
@@ -82,7 +83,7 @@ struct FeedCell: View {
             .padding(.leading, 10)
             .padding(.top, 1)
 
-            Text("6 hours ago")
+            Text(DateUtils.formatDate(timestamp: post.timestamp))
                 .font(.footnote)
                 .foregroundStyle(Color(.systemGray))
                 .frame(maxWidth: .infinity, alignment: .leading)
